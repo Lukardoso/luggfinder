@@ -1,0 +1,268 @@
+:root {
+/* Background */
+    --main-clr: #e6e6e6;
+    --sec-clr: #242424;
+    --accent-clr: tomato;
+
+    /* Font */
+    --main-font-clr: #242424;
+    --sec-font-clr: #fff;
+    --accent-font-clr: #fff;
+
+    --main-font: Arial, Helvetica, sans-serif;
+    --sec-font: ;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    font-family: var(--main-font);
+
+}
+
+body {
+    background: var(--main-clr);
+}
+
+a {
+    text-decoration: none;   
+    color: var(--accent-clr);
+    cursor: pointer;
+}
+
+button {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    background: var(--sec-clr);
+    box-shadow: 2px 2px 5px rgb(0, 0, 0, 0.5);
+
+    color: var(--sec-font-clr);
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+select {
+    width: 100%;
+
+    background: transparent;
+    border: none;
+
+    text-transform: capitalize;
+
+    cursor: pointer;
+}
+
+input[type="search"] {
+    /* background: transparent; */
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.2rem;
+}
+
+
+#ui {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: minmax(200px, 10%) 1fr;
+    grid-template-rows: 10% 1fr 10%;
+
+    padding-right: 2rem;
+}
+
+#ui > * {
+    display: grid;
+    place-items: center;
+
+    /*   border: 0.5px solid grey; */
+}
+
+
+#nav-bar {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+
+    background: var(--main-clr);
+    color: var(--main-font-clr);
+}
+
+#nav-bar .nav-items {
+    justify-self: end;
+
+    display: flex;
+    gap: 1rem;
+}
+
+
+#side-menu {
+    grid-column: 1;
+    grid-row: 1 / 4;
+
+    grid-template-rows: min-content 1fr 2fr min-content;
+
+    margin: 0.5rem 0;
+    padding: 1rem;
+        
+    box-shadow: 5px 5px 5px rgb(0, 0, 0, 0.5);
+    border-radius: 0 1.5rem 1.5rem 0;
+    background: var(--sec-clr);  
+    color: var(--sec-font-clr);
+
+    z-index: 1;
+}
+
+#logo h1 {
+    font-size: 1.5rem;
+}
+
+#logo {
+    margin-bottom: 50px;
+
+    align-self: flex-start;
+
+    display: grid;
+    place-items: center;
+    gap: 0.5rem;
+}
+
+
+#side-menu .menu-items, #side-menu .filter {    
+    align-self: flex-start;
+    display: grid;
+    gap: 1rem;
+
+    list-style: none;
+}
+
+.menu-items > *, .filter > *:not(:first-child) {
+    background: var(--main-clr);
+    padding: 0.5rem 0.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 5px 5px 5px rgb(0, 0, 0, 0.5);
+
+    font-weight: bold;
+    color: var(--main-font-clr);
+}
+
+.menu-items *, .filter * {
+    text-align: center;
+    font-size: 0.8rem;
+}
+
+footer {
+    display: grid;
+    place-items: center;
+    gap: 0.5rem;
+}
+
+#workarea {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+    align-items: flex-start;
+
+    padding-left: 1rem;
+    background: var(--main-clr);
+
+    color: var(--main-font-clr);  
+
+    overflow: auto;
+
+    /* border: 0.5px solid lightgrey; */
+}
+
+#main-table {
+    position: relative;
+    background: var(--main-clr);
+}
+
+#total-table {
+    justify-self: right;
+}
+
+#total-table td {
+    width: 200px;
+}
+
+#workarea th, td {
+    padding: 0.5rem;
+    border-radius: 0.2rem;
+
+    text-align: center;
+}
+
+#table-header {
+    position: sticky;
+    top: 0;
+
+    background: var(--sec-clr);    
+    
+    color: var(--sec-font-clr);
+}
+
+#table-header > th {
+    box-shadow: 0px 2px 5px rgb(0, 0, 0, 0.5);
+}
+
+#workarea td {
+    border: 0.5px solid rgb(0, 0, 0, 0.1);
+}
+
+#workarea::-webkit-scrollbar {
+    width: 0.7rem;
+
+    background: var(--sec-clr);
+    border-radius: 1rem;
+}
+
+#workarea::-webkit-scrollbar-thumb {
+    background: var(--main-clr);
+    border: 3px solid var(--sec-clr);
+    border-radius: 0.5rem;
+}
+
+#workarea .totals th, #workarea .supplier-totals th {    
+    text-align: right;
+}
+
+#workarea .supplier-totals {    
+    font-size: 0.8rem;
+}
+
+.table-data input {
+    width: 100%;
+    padding: 0.2rem;
+    border: none;
+    background: transparent;
+    
+    font-size: 1rem;
+    text-align: center;
+}
+
+input[name="name"] {
+    min-width: 20ch;
+
+    text-transform: capitalize;
+}
+
+
+.totals > * {
+    font-weight: bolder;
+}
+
+#actions-btn {
+    position: absolute;
+    bottom: 1rem;
+}
+
+#save {
+    background: var(--accent-clr);
+    color: var(--accent-font-clr);
+}
+
+#new {
+    background: var(--accent-clr);
+    color: var(--accent-font-clr);
+}

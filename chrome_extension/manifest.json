@@ -1,0 +1,31 @@
+{
+    "name": "WT Extension",
+    "description": "Uma extensão do World Tracer para gerar relatórios mais organizados",
+    "version": "1",
+    "manifest_version": 3,
+    "icons": {
+        "16": "/images/icon.png"
+    },
+    "action": {
+        "default_icon": {
+            "16": "/images/icon.png"
+        }
+    },
+    "permissions": [
+        "storage",
+        "activeTab",
+        "scripting",
+        "tabs"
+    ],
+    "host_permissions": [
+        "https://wtrweb.worldtracer.aero/WorldTracerWeb/*"
+    ],
+
+    "content_scripts": [
+        {
+          "matches": ["https://wtrweb.worldtracer.aero/WorldTracerWeb/homePage.do"],
+          "css": ["style.css"],
+          "js": ["content.js"]
+        }
+    ]
+}

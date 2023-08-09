@@ -1,0 +1,43 @@
+{% extends 'home.html' %}
+
+{% block menu_items %}
+    <a href="#"><li>supplier</li></a>
+    <a href="#"><li>supplier</li></a>
+    <a href="#"><li>supplier</li></a>
+    <a href="#"><li>supplier</li></a>
+{% endblock %}
+
+{% block workarea %}
+    <table id="main-table">
+        <tr id="table-header">
+            <th>PROCESSO</th>
+            <th>DATA</th>
+            <th>PNR</th>
+            <th>NOME</th>
+            <th>CIDADE</th>
+            <th>CUSTO</th>
+            <th>STATUS</th>
+        </tr>
+        <tr class="table-data">
+            <td><input type="text" value="GVRAD12000"></input></td>
+            <td><input type="date" value="2023-08-10"></input></td>
+            <td><input type="text" value="ABC12D"></input></td>
+            <td><input type="text" value="Lucas Cardoso de Oliveira Lannes"></td>
+            <td><input type="text" value="Gov. Valadares"></td>
+            <td><input type="number" class="cost" value="60.00" step="0.01"></td>
+            <td>aprovado</td>
+        </tr>
+    </table>
+    <table id="total-table">
+        <tr class="totals">
+            <th colspan="4">CUSTO TOTAL</th>
+            <td id="total-cost"></td>
+        </tr>
+    </table>
+{% endblock %}
+
+{% block unique_btn %}
+
+    <button id="nfe">Carregar NFE</button>
+
+{% endblock %}

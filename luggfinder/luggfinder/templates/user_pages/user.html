@@ -1,0 +1,66 @@
+{% extends 'home.html' %}
+
+{% block menu_items %}
+    <a href="#"><li>Aprovações Pendentes</li></a>
+    <a href="#"><li>Gerenciar Fornecedor</li></a>
+    <a href="#"><li>Bag Match</li></a>
+    <a href="#"><li>Estatísticas</li></a>
+{% endblock %}
+
+{% block workarea %}
+    <table id="main-table">
+        <tr id="table-header">
+            <th>PROCESSO</th>
+            <th>DATA</th>
+            <th>NOME</th>
+            <th>PNR</th>
+            <th>TIPO</th>
+            <th>FS</th>
+            <th>RL</th>
+            <th>FORNECEDOR</th>
+            <th>CUSTO</th>
+        </tr>
+        {% for row in query %}
+            <tr class="table-data">
+                <td><input type="text" name="process" value="{{ row.process }}"></td>
+                <td><input type="date" name="date" value="{{ row.date }}"></td>
+                <td><input type="text" name="name" value="{{ row.name }}"></td>
+                <td><input type="text" name="pnr" value="{{ row.pnr }}"></td>
+                <td><input type="text" name="process_type" value="{{ row.process_type }}"></td>
+                <td><input type="text" name="fault_station" value="{{ row.fault_station }}"></td>
+                <td><input type="text" name="process_reason" value="{{ row.process_reason }}"></td>
+                <td class="supplier-selection">
+                    <select name="supplier">
+                        {% for supplier in suppliers %}
+                            <option value="{{ supplier }}">{{ supplier }}</option>
+                        {% endfor %}
+                    </select>
+                </td>
+                <td><input type="number" name="cost" step="0.1" value="{{ row.cost }}"></td>
+            </tr>
+        {% endfor %}
+    </table>
+    <table id="total-table">
+        <tr class="totals">
+            <th colspan="8">CUSTO TOTAL</th>
+            <td id="total-cost">350.00</td>
+        </tr>
+        <tr class="supplier-totals">
+            <th colspan="8">GVExpress</th>
+            <td id="total-cost">100.00</td>
+        </tr>
+        <tr class="supplier-totals">
+            <th colspan="8">Três Company</th>
+            <td id="total-cost">200.00</td>
+        </tr>
+        <tr class="supplier-totals">
+            <th colspan="8">Voucher</th>
+            <td id="total-cost">50.00</td>
+        </tr>
+    </table>
+{% endblock %}
+
+
+{% block unique_btn %}    
+
+{% endblock %}

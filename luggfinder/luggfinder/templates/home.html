@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/main.css">
+    <script src="../static/js/main.js" defer></script>
+    <title>{{ title }}</title>
+</head>
+<body>
+    <div id="ui">
+        <header id="nav-bar">           
+            <div class="nav-items">
+                <a href="#"><span>Perfil</span></a>
+                <a href="/logout"><span>Logout</span></a>
+            </div>
+        </header>
+        <div id="side-menu">
+            <div id="logo">
+                <h1>LuggFinder</h1>
+                <a href="https://lucatools.com">
+                    <p>Lucatools</p>
+                </a>
+            </div>
+            <ul class="filter">
+                <li><input type="search" placeholder="Pesquisar" name="search"></li>
+                <li>
+                    <select name="month-range" id="month-range">
+                        <option value="1">janeiro</option>
+                        <option value="2">fevereiro</option>
+                        <option value="3">março</option>
+                        <option value="4">abril</option>
+                        <option value="5">maio</option>
+                        <option value="6">junho</option>
+                        <option value="7">julho</option>
+                        <option value="8">agosto</option>
+                        <option value="9">setembro</option>
+                        <option value="10">outubro</option>
+                        <option value="11">novembro</option>
+                        <option value="12">dezembro</option>
+                    </select>
+                </li>
+            </ul>
+            <ul class="menu-items">                
+                {% block menu_items %}
+                <!-- inherit from user or supplier -->
+                {% endblock %}
+            </ul>            
+            <footer>
+                <a href="#"><p>Contato</p></a>
+                <a href="#"><p>Outros Projetos</p></a>
+            </footer>
+        </div>
+        <div id="workarea">
+            {% block workarea %}
+            <!-- inherit from user or supplier -->
+            {% endblock %}
+            <div id="actions-btn">
+                <button id="new">Novo Processo</button>
+                <button id="print">Imprimir</button>
+                <button id="download">Baixar</button>
+                {% block unique_btn %}
+                <!-- unique btn from each template -->
+                {% endblock %}
+            </div>
+        </div>
+    </div>
+</body>
+</html>

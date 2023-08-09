@@ -1,0 +1,20 @@
+.wrapper {
+    width: fit-content;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+
+    padding: 1rem;
+    background: #343434;
+}
+
+#plugin-panel {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    background: #343434;
+}
