@@ -1,3 +1,9 @@
+<script src="../../static/js/saveToDatabase.js" defer></script>
+
+<script defer>
+    alert("deu certo");
+</script>
+
 {% extends 'home.html' %}
 
 {% block menu_items %}
@@ -29,13 +35,7 @@
                 <td><input type="text" name="process_type" value="{{ row.process_type }}"></td>
                 <td><input type="text" name="fault_station" value="{{ row.fault_station }}"></td>
                 <td><input type="text" name="process_reason" value="{{ row.process_reason }}"></td>
-                <td class="supplier-selection">
-                    <select name="supplier">
-                        {% for supplier in suppliers %}
-                            <option value="{{ supplier }}">{{ supplier }}</option>
-                        {% endfor %}
-                    </select>
-                </td>
+                <td><input type="text" name="supplier" value="{{ row.supplier }}"></td>
                 <td><input type="number" name="cost" step="0.1" value="{{ row.cost }}"></td>
             </tr>
         {% endfor %}
@@ -62,5 +62,5 @@
 
 
 {% block unique_btn %}    
-
+    
 {% endblock %}
