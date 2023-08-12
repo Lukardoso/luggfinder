@@ -1,9 +1,12 @@
+<script src="../../static/js/saveToDatabase.js" defer></script>
+
+
 {% extends 'home.html' %}
 
 {% block menu_items %}
+    <a href="#"  id="new-process"><li>Novo Processo</li></a>
     <a href="#"><li>Aprovações Pendentes</li></a>
     <a href="#"><li>Gerenciar Fornecedor</li></a>
-    <a href="#"><li>Bag Match</li></a>
     <a href="#"><li>Estatísticas</li></a>
 {% endblock %}
 
@@ -22,20 +25,14 @@
         </tr>
         {% for row in query %}
             <tr class="table-data">
-                <td><input type="text" name="process" value="{{ row.process }}"></td>
+                <td><input type="text" name="process" value="{{ row.process }}" readonly></td>
                 <td><input type="date" name="date" value="{{ row.date }}"></td>
                 <td><input type="text" name="name" value="{{ row.name }}"></td>
                 <td><input type="text" name="pnr" value="{{ row.pnr }}"></td>
                 <td><input type="text" name="process_type" value="{{ row.process_type }}"></td>
                 <td><input type="text" name="fault_station" value="{{ row.fault_station }}"></td>
                 <td><input type="text" name="process_reason" value="{{ row.process_reason }}"></td>
-                <td class="supplier-selection">
-                    <select name="supplier">
-                        {% for supplier in suppliers %}
-                            <option value="{{ supplier }}">{{ supplier }}</option>
-                        {% endfor %}
-                    </select>
-                </td>
+                <td><input type="text" name="supplier" value="{{ row.supplier }}"></td>
                 <td><input type="number" name="cost" step="0.1" value="{{ row.cost }}"></td>
             </tr>
         {% endfor %}
@@ -62,5 +59,5 @@
 
 
 {% block unique_btn %}    
-
+    
 {% endblock %}

@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../static/css/main.css">
-    <script src="../static/js/main.js" defer></script>
     <title>{{ title }}</title>
 </head>
 <body>
@@ -56,13 +55,13 @@
             {% block workarea %}
             <!-- inherit from user or supplier -->
             {% endblock %}
-            <div id="actions-btn">
-                <button id="new">Novo Processo</button>
-                <button id="print">Imprimir</button>
-                <button id="download">Baixar</button>
+            <div id="actions-btn">                
+                <button id="save-changes">Salvar Alterações</button>
                 {% block unique_btn %}
                 <!-- unique btn from each template -->
                 {% endblock %}
+                <button id="print">Imprimir</button>
+                <button id="download">Baixar</button>
             </div>
         </div>
     </div>

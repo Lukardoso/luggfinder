@@ -45,6 +45,11 @@ button {
     cursor: pointer;
 }
 
+#new-process {
+    background: var(--accent-clr);
+    color: var(--accent-font-clr);
+}
+
 select {
     width: 100%;
 
@@ -52,6 +57,8 @@ select {
     border: none;
 
     text-transform: capitalize;
+    text-align: center;
+    font-size: 1rem;
 
     cursor: pointer;
 }
@@ -257,7 +264,8 @@ input[name="name"] {
     bottom: 1rem;
 }
 
-#save {
+#save-changes {
+    display: none;
     background: var(--accent-clr);
     color: var(--accent-font-clr);
 }
