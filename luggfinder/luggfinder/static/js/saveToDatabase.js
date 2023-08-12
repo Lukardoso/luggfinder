@@ -3,7 +3,7 @@ const saveToDataBaseBtn = document.querySelector("#save-changes");
 
 
 function sendToServer(jsonPayload) {
-    fetch("http://127.0.0.1:5000/data_from_user", {
+    fetch("http://127.0.0.1:5000/update_process", {
     method: "POST",
     body: JSON.stringify(jsonPayload),
     headers: {
@@ -20,8 +20,9 @@ let changedDataReady = {};
 row.forEach(cell => {
     cell.addEventListener("change", (e) => {
         saveToDataBaseBtn.style.display = "inline-block";  
-        let changedRow = e.currentTarget.querySelectorAll("td");
+        let changedRow = e.currentTarget.querySelectorAll("td");        
         let changedData = {};
+
         
         changedRow.forEach(changedCell => {
             Object.assign(changedData, {[changedCell.children[0].name] : changedCell.children[0].value});

@@ -21,7 +21,7 @@ class Supplier(db.Model):
 
 
 class Process(db.Model):
-    process = db.Column(db.String(10), primary_key=True)
+    process = db.Column(db.String(10), primary_key=True, nullable=False)
     date = db.Column(db.String(10)) # format = yyyy-mm-dd
     name = db.Column(db.String(20))
     pnr = db.Column(db.String(6))

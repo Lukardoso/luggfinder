@@ -45,6 +45,11 @@ button {
     cursor: pointer;
 }
 
+#new-process {
+    background: var(--accent-clr);
+    color: var(--accent-font-clr);
+}
+
 select {
     width: 100%;
 
