@@ -53,9 +53,9 @@ button {
 select {
     width: 100%;
 
-    background: transparent;
+    background: var(--main-clr);
     border: none;
-
+    
     text-transform: capitalize;
     text-align: center;
     font-size: 1rem;
@@ -64,7 +64,6 @@ select {
 }
 
 input[type="search"] {
-    /* background: transparent; */
     border: none;
     border-radius: 0.5rem;
     padding: 0.2rem;
@@ -193,8 +192,15 @@ footer {
     width: 200px;
 }
 
-#workarea th, td {
+#workarea th {
     padding: 0.5rem;
+    border-radius: 0.2rem;
+
+    text-align: center;
+}
+
+#workarea td {
+    padding: 0 0.2rem;
     border-radius: 0.2rem;
 
     text-align: center;
@@ -240,7 +246,7 @@ footer {
 
 .table-data input {
     width: 100%;
-    padding: 0.2rem;
+    padding: 0.6rem 0;
     border: none;
     background: transparent;
     

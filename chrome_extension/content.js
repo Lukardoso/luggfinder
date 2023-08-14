@@ -130,7 +130,7 @@ function generateJson() {
 
 // Send to Server
 function sendToServer(jsonPayload) {
-    fetch("http://127.0.0.1:5000/json/wt", {
+    fetch("https://app.lucaslannes.com.br/json/wt", {
     method: "POST",
     body: JSON.stringify(jsonPayload),
     headers: {

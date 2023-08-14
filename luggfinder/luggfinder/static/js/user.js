@@ -1,16 +1,8 @@
+import { sendToServer } from "./modules.js";
+
+
 const row = document.querySelectorAll(".table-data");
 const saveToDataBaseBtn = document.querySelector("#save-changes");
-
-
-function sendToServer(jsonPayload) {
-    fetch("http://127.0.0.1:5000/update_process", {
-    method: "POST",
-    body: JSON.stringify(jsonPayload),
-    headers: {
-        "Content-type": "application/json; charset=UTF-8"
-        }
-    });
-}
 
 
 // Get Changed Data:
@@ -57,9 +49,22 @@ row.forEach(cell => {
     })
 });
 
-
+// Send it to server:
 saveToDataBaseBtn.addEventListener("click", ()=> {
     console.log("sending data...");
     sendToServer(changedDataReady);
     saveToDataBaseBtn.style.display = "none";
 });
+
+
+
+// // Supplier Dropdown:
+// const supplierInput = $("input[name=supplier]");
+// const supplierDropdown = $(".supplier-selection");
+
+// supplierInput.click(function () {
+//     supplierInput.each(function () {
+//         $(this).css("display", "none")
+//     })
+// })
+

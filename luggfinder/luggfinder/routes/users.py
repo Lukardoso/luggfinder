@@ -8,11 +8,12 @@ user_bp = Blueprint('user', __name__)
 @user_bp.route('/user')
 def home():
     query = Process.query.all()
+    suppliers = {"", "Gv Express", "Três Company", "Voucher", "Retirou"}
     
     return render_template("user_pages/user.html", 
                             title="User", 
-                            query=query
-                            )
+                            query=query,
+                            suppliers=suppliers)
 
 
 @user_bp.route('/update_process', methods=['POST'])
