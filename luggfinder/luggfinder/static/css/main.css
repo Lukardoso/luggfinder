@@ -53,9 +53,9 @@ button {
 select {
     width: 100%;
 
-    background: transparent;
+    background: var(--main-clr);
     border: none;
-
+    
     text-transform: capitalize;
     text-align: center;
     font-size: 1rem;
@@ -64,7 +64,6 @@ select {
 }
 
 input[type="search"] {
-    /* background: transparent; */
     border: none;
     border-radius: 0.5rem;
     padding: 0.2rem;

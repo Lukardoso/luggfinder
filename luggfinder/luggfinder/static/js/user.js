@@ -49,9 +49,22 @@ row.forEach(cell => {
     })
 });
 
-
+// Send it to server:
 saveToDataBaseBtn.addEventListener("click", ()=> {
     console.log("sending data...");
     sendToServer(changedDataReady);
     saveToDataBaseBtn.style.display = "none";
 });
+
+
+
+// // Supplier Dropdown:
+// const supplierInput = $("input[name=supplier]");
+// const supplierDropdown = $(".supplier-selection");
+
+// supplierInput.click(function () {
+//     supplierInput.each(function () {
+//         $(this).css("display", "none")
+//     })
+// })
+

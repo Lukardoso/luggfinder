@@ -8,7 +8,7 @@ class User(db.Model):
     email = db.Column(db.String(30), unique=True, nullable=False)
 
     def __repr__(self) -> str:
-        return f"RE: {self.re} | Name: {self.name}"
+        return f"User{self.re}, {self.name}, {self.email})"
 
 
 class Supplier(db.Model):
@@ -17,18 +17,18 @@ class Supplier(db.Model):
     email = db.Column(db.String(30), unique=True, nullable=False)
 
     def __repr__(self) -> str:
-        return f"ID: {self.id} | Name: {self.name}"
+        return f"Supplier({self.id}, {self.name}, {self.email})"
 
 
 class Process(db.Model):
     process = db.Column(db.String(10), primary_key=True, nullable=False)
-    date = db.Column(db.String(10)) # format = yyyy-mm-dd
+    date = db.Column(db.String(10))
     name = db.Column(db.String(20))
     pnr = db.Column(db.String(6))
     process_type = db.Column(db.String(3))
     fault_station = db.Column(db.String(3))
     process_reason = db.Column(db.Integer)
-    cost = db.Column(db.Float(5)) # format = 00.00
+    cost = db.Column(db.Float(6))
     supplier = db.Column(db.Integer, db.ForeignKey('supplier.id'))
 
     # Secondary Data:
@@ -39,4 +39,15 @@ class Process(db.Model):
 
 
     def __repr__(self) -> str:
-        return f"Process: {self.process} | Name: {self.name} | PNR: {self.pnr}"
+        return f"Process({self.process}, {self.name}, {self.pnr})"
+
+
+class Cost(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    delivery = db.Column(db.Float(5))
+    damage = db.Column(db.Float(5))
+    voucher = db.Column(db.Float(5))
+    process = db.Column(db.String, db.ForeignKey("process.process"), nullable=False)
+
+    def __repr__(self) -> str:
+        return f"Cost(process:{self.process}, delivery:{self.delivery}, damage:{self.damage}, voucher:{self.voucher}"
