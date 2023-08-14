@@ -193,8 +193,15 @@ footer {
     width: 200px;
 }
 
-#workarea th, td {
+#workarea th {
     padding: 0.5rem;
+    border-radius: 0.2rem;
+
+    text-align: center;
+}
+
+#workarea td {
+    padding: 0 0.2rem;
     border-radius: 0.2rem;
 
     text-align: center;
@@ -240,7 +247,7 @@ footer {
 
 .table-data input {
     width: 100%;
-    padding: 0.2rem;
+    padding: 0.6rem 0;
     border: none;
     background: transparent;
     

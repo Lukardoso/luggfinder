@@ -1,0 +1,67 @@
+#ui {
+    /* height: 100vh; */
+    display: grid;
+    grid-template-rows: 5% 1fr 20%;
+
+    padding: 0;
+
+    overflow-x: scroll;
+}
+
+
+#side-menu {
+    display: none;
+}
+
+
+#nav-bar {
+    grid-row: 1 / 2;
+
+    background: var(--main-clr);
+    color: var(--main-font-clr);
+}
+
+
+#workarea {
+    grid-column: 1 / 3;
+    grid-row: 2 / 3;
+
+    background: var(--main-clr);
+
+    color: var(--main-font-clr);  
+
+    overflow: revert;
+
+}
+
+#main-table {
+    position: revert;
+    background: var(--main-clr);
+}
+
+.table-data input {
+    width: fit-content;
+    padding: 0.2rem 0;
+    border: none;
+    background: transparent;
+    
+    font-size: 1rem;
+    text-align: center;
+}
+
+#actions-btn {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+
+    justify-self: center;
+
+    padding: 2rem 0;
+    background: rgb(0, 0, 0, 0.2);
+}
