@@ -1,4 +1,4 @@
-# luggfinder
+# LuggFinder
 Um webapp para gerenciar ocorrências com bagagens em aeroportos.
 
 # Proposta
